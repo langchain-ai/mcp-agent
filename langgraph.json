@@ -6,5 +6,8 @@
   "http": {
     "disable_mcp": false
   },
-  "env": ".env"
+  "env": ".env",
+  "auth": {
+    "path": "./src/react_agent/auth.py:auth"
+  }
 }
