@@ -1,0 +1,10 @@
+{
+  "dependencies": ["."],
+  "graphs": {
+    "agent": "./src/react_agent/graph.py:graph"
+  },
+  "http": {
+    "disable_mcp": false
+  },
+  "env": ".env"
+}
