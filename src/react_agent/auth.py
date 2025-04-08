@@ -2,7 +2,6 @@ import hmac
 import os
 
 from langgraph_sdk import Auth
-from 
 
 auth = Auth()
 
@@ -25,24 +24,13 @@ APP_SECRET = _get_app_secret()
 @auth.authenticate
 async def authenticate(authorization: str) -> Auth.types.MinimalUserDict:
     # Validate credentials (e.g., API key, JWT token)
-    print('AUTHENTICATION.')
-    print('AUTHENTICATION.')
-    print('AUTHENTICATION.')
-    print('AUTHENTICATION.')
-    print('AUTHENTICATION.')
-    print(authorization)
-    print('AUTHENTICATION.')
-    print('AUTHENTICATION.')
-    print('AUTHENTICATION.')
-    print('AUTHENTICATION.')
-    print('AUTHENTICATION.')
     if not authorization or not hmac.compare_digest(authorization, APP_SECRET):
         raise Auth.exceptions.HTTPException(status_code=401, detail="Unauthorized")
 
     # Return user info - only identity and is_authenticated are required
     # Add any additional fields you need for authorization
     return {
-        "identity": "user-123",        # Required: unique user identifier
+        "identity": "authenticated-user",
     }
 
 
